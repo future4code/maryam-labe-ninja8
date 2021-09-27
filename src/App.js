@@ -14,10 +14,11 @@ const HeaderApp = styled.header`
 	margin: -8px;
 	padding: 10px;
 	background-color: gray;
+	justify-content: space-between;
 `
 const ButtonApp = styled.div`
 	display: flex;
-	margin-left: 1150px;
+	margin-left: 20px;
 `
 
 // const FooterApp = styled.footer`
@@ -87,6 +88,7 @@ export default class App extends React.Component {
 						<button onClick={this.irParaCarrinho}>Carrinho</button>
 					</ButtonApp>
 				</HeaderApp>
+				{this.escolheTela()}
 				{/* <div>			
 					<FooterApp>
 						Este é o roda pé

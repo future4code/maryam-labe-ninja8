@@ -5,7 +5,9 @@ import React from "react";
 export default class TelaCarrinho extends React.Component {
     render() {
         return (
-            <div>Tela de Carrinho</div>
+            <div>
+                <h1>Tela de Carrinho</h1>
+            </div>
         )
     }
 }

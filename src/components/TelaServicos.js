@@ -5,7 +5,9 @@ import React from "react";
 export default class TelaServicos extends React.Component {
     render() {
         return (
-            <div>Tela de Servicos</div>
+            <div>
+                <h1>Tela de Servicos</h1>
+            </div>
         )
     }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import TelaDetalheServico from "./TelaDetalheServico";
-import Axios from 'axios'
+// import Axios from 'axios'
 // import styled from 'styled-components'
 
 export default class TelaServicos extends React.Component {

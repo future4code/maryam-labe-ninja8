@@ -1,8 +1,8 @@
 import React from "react";
 import TelaDetalheServico from "./TelaDetalheServico";
+import CardServicos from "./CardServicos";
 // import styled from 'styled-components'
 // import Axios from 'axios'
-
 export default class TelaServicos extends React.Component {
     state = {
         telaServicoAtual: "servico"
@@ -13,8 +13,9 @@ export default class TelaServicos extends React.Component {
             case "servico":
                 return (
                     <div>
-                     <h1>Tela de Serviços</h1>
-                     <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                    <h1>Tela de Serviços</h1>
+                    <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                    <CardServicos></CardServicos>
                     </div>
                 )
             case "detalhe":

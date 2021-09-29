@@ -5,6 +5,7 @@ import TelaCadastro from './components/TelaCadastro'
 import TelaServicos from './components/TelaServicos'
 import TelaCarrinho from './components/TelaCarrinho'
 import TelaHome from './components/TelaHome'
+import Footer from './components/Footer'
 
 const HeaderApp = styled.header`
 	display: flex;
@@ -94,6 +95,7 @@ export default class App extends React.Component {
 						Este é o roda pé
 					</FooterApp>
 				</div> */}
+				<Footer></Footer>
 			</div>
 		)
 	}

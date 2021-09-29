@@ -30,8 +30,18 @@ const ButtonApp = styled.div`
 
 export default class App extends React.Component {
 	state = {
-		telaAtual: "Home"
+		telaAtual: "Home",
+		carrinho: []
 	}
+
+	adicionarAoCarrinho = (objetodeservico) => {
+		this.setState({carrinho: [...this.state.carrinho, objetodeservico]})
+	}
+
+	removerDoCarrinho = () => {
+		
+	}
+
 
 	escolheTela = () => {
 		switch (this.state.telaAtual){
@@ -44,6 +54,7 @@ export default class App extends React.Component {
 				return <TelaServicos 
 					irParaHome={this.irParaHome}
 					irParaCarrinho={this.irParaCarrinho} 
+					adicionarAoCarrinho={this.adicionarAoCarrinho}
 				/>
 			case "carrinho":
 				return <TelaCarrinho 
@@ -79,6 +90,7 @@ export default class App extends React.Component {
 	}
 
 	render(){
+		console.log(this.state.carrinho)
 		return (
 			<div>
 				<HeaderApp>

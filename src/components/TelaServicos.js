@@ -1,7 +1,7 @@
 import React from "react";
 import TelaDetalheServico from "./TelaDetalheServico";
+import Axios from 'axios'
 // import styled from 'styled-components'
-// import Axios from 'axios'
 
 export default class TelaServicos extends React.Component {
     state = {
@@ -13,8 +13,15 @@ export default class TelaServicos extends React.Component {
             case "servico":
                 return (
                     <div>
-                     <h1>Tela de Serviços</h1>
-                     <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                        <h1>Tela de Serviços</h1>
+                        <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                        <button onClick={() => this.props.adicionarAoCarrinho(
+                             {
+                                nome: "oioi",
+                                preco: 2,
+                                prazo: 5,
+                            }
+                        )}>Adicionar ao carrinho</button>
                     </div>
                 )
             case "detalhe":
@@ -33,6 +40,9 @@ export default class TelaServicos extends React.Component {
     irParaTelaServico = () => {
         this.setState({telaServicoAtual: "servico"})
     }
+
+    
+
     render() {
         return (
             <div>

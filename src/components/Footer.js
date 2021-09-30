@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-    position:absolute;
+    position:relative;
     left:0;
     bottom:0;
     right:0;
@@ -26,13 +26,13 @@ const HeaderContainer = styled.div`
 export default class Footer extends React.Component{
     render(){
         return <HeaderContainer>
-            <a href='https://www.instagram.com/' target='_Blank'>
+            <a href='https://www.instagram.com/' target='_Blank' rel="noopener noreferrer">
                 <img src='https://cdn-icons-png.flaticon.com/512/2111/2111463.png' alt='Icone Instagram'/>
             </a>
-            <a href='https://www.facebook.com/' target='_Blank'>
+            <a href='https://www.facebook.com/' target='_Blank' rel="noopener noreferrer">
                 <img src='https://cdn-icons-png.flaticon.com/512/174/174848.png' alt='Icone Facebook'/>
             </a>
-            <a href='https://www.twitter.com/' target='_Blank'>
+            <a href='https://www.twitter.com/' target='_Blank' rel="noopener noreferrer">
                 <img src='https://cdn-icons-png.flaticon.com/512/1409/1409937.png' alt='Icone Twitter'/>
             </a>
         </HeaderContainer>

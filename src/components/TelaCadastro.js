@@ -6,7 +6,7 @@ const url = "https://labeninjas.herokuapp.com"
 
 const key = "labeninjas-grupo8"
 
-const headers = {Authorization: 'fe737bdf-5109-4d3c-9cf0-519c2e8d129e'}
+const headers = {'Authorization': 'fe737bdf-5109-4d3c-9cf0-519c2e8d129e'}
 
 
  const FormContainer = styled.form`
@@ -32,7 +32,7 @@ export default class TelaCadastro extends React.Component {
         titulo: "",
         descricao:"",
         preco:"",
-        metodoDePagamento:[],
+        paymentMethods:[],
         dataInicio:""
         // isLoading: false
     };
@@ -57,7 +57,7 @@ export default class TelaCadastro extends React.Component {
         // console.log("metodoDePagamento")
         let value = Array.from(event.target.selectedOptions, option => option.value)
         this.setState({ paymentMethods: value })
-        console.log("pagamento")
+        console.log("pagamento", value)
     }
 
     handleDataInicio = (event) => {
@@ -71,17 +71,19 @@ export default class TelaCadastro extends React.Component {
             title: this.state.titulo,
             description: this.state.descricao,
             price: Number(this.state.preco),
-            paymentMethods: this.state.metodoDePagamento,
+            paymentMethods: this.state.paymentMethods,
             dueDate: this.state.dataInicio
         };
         axios 
-            .post(url + '/jobs', body, headers)
+            .post(url + '/jobs', body, {
+                headers: headers
+            })
             .then((res) => {
                 this.setState({
                     titulo: "",
                     descricao:"",
                     preco:"",
-                    metodoDePagamento:[],
+                    paymentMethods:[],
                     dataInicio:"",
                 });
 

@@ -1,13 +1,12 @@
 import React from "react";
 import styled from 'styled-components'
 import axios from 'axios'
- 
 
 const url = "https://labeninjas.herokuapp.com"
 
 const key = "labeninjas-grupo8"
 
-const headers = {Authorization: key}
+const headers = {Authorization: 'fe737bdf-5109-4d3c-9cf0-519c2e8d129e'}
 
 
  const FormContainer = styled.form`
@@ -23,11 +22,9 @@ const headers = {Authorization: key}
 
 export default class TelaCadastro extends React.Component {
 
-    criarChave = (event) => {       
-        axios.post('{{url}}/auth',{
-            body: {
-               key: "labeninjas-grupo8"
-            }
+    criarChave = async (event) => {
+        return await axios.post(url + '/auth',{
+            name: "labeninjas-grupo8-teste"
        });
     }
 
@@ -68,7 +65,7 @@ export default class TelaCadastro extends React.Component {
         console.log("dataInicio")
     }
 
-    cadastrarApi = (event) => {
+    cadastrarApi = async (event) => {
         event.preventDefault()
         const body = {
             title: this.state.titulo,
@@ -77,9 +74,8 @@ export default class TelaCadastro extends React.Component {
             paymentMethods: this.state.metodoDePagamento,
             dueDate: this.state.dataInicio
         };
-
         axios 
-            .post(url, body, headers)
+            .post(url + '/jobs', body, headers)
             .then((res) => {
                 this.setState({
                     titulo: "",

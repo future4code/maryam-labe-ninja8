@@ -67,7 +67,7 @@ export default class TelaServicos extends React.Component {
                                 return <CardServico key={servico.id}>
                                     <h3>{servico.title}</h3>
                                     <p>Preço: {servico.price}</p>
-                                    <p>prazo: {servico.dueDate}</p>
+                                    <p>prazo: {(servico.dueDate).slice(0,10)}</p>
                                     <ButtonServicos>
                                         <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
                                         <button onClick={() => this.props.adicionarAoCarrinho(

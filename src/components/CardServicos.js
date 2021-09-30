@@ -23,12 +23,18 @@ const ButtonServicos = styled.div`
 export default class CardServicos extends React.Component{
     render(){
         return <CardServico>
-            <h3>Título</h3>
-            <p>preço: </p>
-            <p>Prazo: </p>
+            <h3>{this.props.titulo}</h3>
+            <p>preço: {this.props.preco}</p>
+            <p>Prazo: {this.props.prazo}</p>
             <ButtonServicos>
-                <button>Ver detalhes</button>
-                <button>Adicionar no carrinho</button>
+                <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                <button onClick={() => this.props.adicionarAoCarrinho(
+                            {
+                                nome: this.props.titulo,
+                                preco: this.props.preco,
+                                prazo: this.props.prazo,
+                            }
+                        )}>Adicionar no carrinho</button>
             </ButtonServicos>
         </CardServico>
     }

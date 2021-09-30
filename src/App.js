@@ -91,7 +91,6 @@ export default class App extends React.Component {
 	}
 
 	render(){
-		console.log(this.state.carrinho)
 		return (
 			<div>
 				<HeaderApp>
@@ -102,11 +101,6 @@ export default class App extends React.Component {
 					</ButtonApp>
 				</HeaderApp>
 				{this.escolheTela()}
-				{/* <div>			
-					<FooterApp>
-						Este é o roda pé
-					</FooterApp>
-				</div> */}
 				<Footer></Footer>
 			</div>
 		)

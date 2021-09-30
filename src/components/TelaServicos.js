@@ -1,7 +1,10 @@
 import React from "react";
 import TelaDetalheServico from "./TelaDetalheServico";
-// import Axios from 'axios'
-// import styled from 'styled-components'
+import CardServicos from "./CardServicos";
+import styled from 'styled-components'
+import Axios from 'axios'
+
+
 
 export default class TelaServicos extends React.Component {
     state = {
@@ -22,6 +25,7 @@ export default class TelaServicos extends React.Component {
                                 prazo: 5,
                             }
                         )}>Adicionar ao carrinho</button>
+                          <CardServicos></CardServicos>
                     </div>
                 )
             case "detalhe":

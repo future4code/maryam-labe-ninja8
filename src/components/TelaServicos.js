@@ -69,14 +69,15 @@ export default class TelaServicos extends React.Component {
                                     <p>Preço: {servico.price}</p>
                                     <p>prazo: {(servico.dueDate).slice(0,10)}</p>
                                     <ButtonServicos>
-                                        <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                                        <button onClick={this.props.irParaTelaDetalhe}>Ver detalhes</button>
                                         <button onClick={() => this.props.adicionarAoCarrinho(
-                            {
-                                nome: servico.title,
-                                preco: servico.price,
-                                prazo: servico.dueDate
-                            }
-                        )}>Adicionar no carrinho</button>
+                                            {
+                                                nome: servico.title,
+                                                preco: servico.price,
+                                                prazo: servico.dueDate
+                                            }
+                                            )}>Adicionar no carrinho
+                                        </button>
                                     </ButtonServicos>
                                 </CardServico>
                             })}

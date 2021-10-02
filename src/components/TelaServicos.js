@@ -38,8 +38,9 @@ export default class TelaServicos extends React.Component {
         listaServicos : [],
         titulo: '',
         preco: 0,
-        prazo: ''
-
+        prazo: '',
+        descricao: '',
+        pagamento: []
     }
     pegarServicos = () => {
         Axios.get(urlJobs, {headers: headers})
@@ -51,6 +52,8 @@ export default class TelaServicos extends React.Component {
                 this.setState({titulo: servicos.title})
                 this.setState({prazo: servicos.dueDate})
                 this.setState({preco: servicos.price})
+                this.setState({descricao: servicos.description})
+                this.setState({pagamento: servicos.paymentMethods})
             })
         })
         .catch()
@@ -69,7 +72,14 @@ export default class TelaServicos extends React.Component {
                                     <p>Preço: {servico.price}</p>
                                     <p>prazo: {(servico.dueDate).slice(0,10)}</p>
                                     <ButtonServicos>
-                                        <button onClick={this.irParaTelaDetalhe}>Ver detalhes</button>
+                                        <button onClick={() => {
+                                            this.setState({titulo : servico.title})
+                                            this.setState({descricao : servico.description})
+                                            this.setState({prazo : (servico.dueDate).slice(0,10)})
+                                            this.setState({pagamento : servico.paymentMethods})
+                                            this.setState({preco : servico.price})
+                                            this.irParaTelaDetalhe()
+                                        }}>Ver detalhes</button>
                                         <button onClick={() => this.props.adicionarAoCarrinho(
                             {
                                 nome: servico.title,
@@ -86,6 +96,11 @@ export default class TelaServicos extends React.Component {
             case "detalhe":
                 return <TelaDetalheServico
                     irParaTelaServico={this.irParaTelaServico}
+                    titulo={this.state.titulo}
+                    descricao={this.state.descricao}
+                    prazo={this.state.prazo}
+                    preco={this.state.preco}
+                    pagamento={this.state.pagamento}
                 />
             default: 
                 return <div>Erro! Página não encontrada.</div>

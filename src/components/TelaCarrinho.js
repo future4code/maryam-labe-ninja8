@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Axios from 'axios';
+// import Axios from 'axios';
 
 const DivCardCarrinho = styled.div`
     display: flex;
@@ -17,7 +17,30 @@ const teste = [
     { id: 1, name: 'natação', price: 50 },
 ];
 
+const ButtonsFinal = styled.div`
+    display: flex;
+`
+
+const CleanButton = styled.div`
+    display: flex;
+    justify-content: flex-end;
+
+`
+
 export default class TelaCarrinho extends React.Component {
+    
+    // limpaCarrinho = () => {
+    //     const carrinhoVazio = this.state.carrinho.map((item)=> {
+    //       return { ...item, quantidade: 0}
+    //     })
+    //     this.setState({carrinho: carrinhoVazio});
+    //     this.setState({valorTotal: 0})
+    //   }
+
+      finalizaCompra = () => {
+        // alert("Você finalizou sua compra")
+      }
+    
     render() {
         return (
             <div>
@@ -32,9 +55,14 @@ export default class TelaCarrinho extends React.Component {
                 })}
                 <div>
                     <span>Valor Total: {teste.reduce((total, numero) => total + numero.price, 0)}</span>
-                    <button>Finalizar Compra</button>
-                    <button>Voltar para a lista</button>
+                <ButtonsFinal>
+                    <button onClick={this.finalizaCompra()}>Finalizar Compra</button>
+                    <button onClick={this.props.irParaServicos}>Voltar para a lista</button>
+                    <button onClick={this.limpaCarrinho}>Limpar Carrinho</button> 
+                </ButtonsFinal>
                 </div>
+                <CleanButton>
+                </CleanButton>
             </div>
         );
     }

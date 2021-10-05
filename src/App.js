@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Axios from 'axios'
+import Axios from 'axios'
 import TelaCadastro from './components/TelaCadastro'
 import TelaServicos from './components/TelaServicos'
 import TelaCarrinho from './components/TelaCarrinho'
